@@ -11,6 +11,7 @@ class Redactor2Rails::ImagesController < ApplicationController
       @image.assetable = redactor_current_user
     end
 
+    puts 'Before Save'
     if @image.save
       puts 'SAVED!'
       render json: { id: @image.id, url: @image.url(:content) }
