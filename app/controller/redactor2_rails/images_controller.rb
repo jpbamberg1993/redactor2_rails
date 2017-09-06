@@ -7,6 +7,7 @@ class Redactor2Rails::ImagesController < ApplicationController
     file = params[:file]
     @image.data = Redactor2Rails::Http.normalize_param(file, request)
     if @image.has_attribute?(:"#{Redactor2Rails.devise_user_key}")
+      puts 'has attribute devise_user_key'
       @image.send("#{Redactor2Rails.devise_user}=", redactor_current_user)
       @image.assetable = redactor_current_user
     end
