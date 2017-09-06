@@ -24,6 +24,7 @@ class Redactor2Rails::ImagesController < ApplicationController
   private
 
   def redactor2_authenticate_user!
+    puts 'redactor2_authenticate_user!'
     if Redactor2Rails.image_model.new.has_attribute?(Redactor2Rails.devise_user)
       super
     end
