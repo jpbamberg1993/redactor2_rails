@@ -17,7 +17,7 @@ class Redactor2Rails::ImagesController < ApplicationController
       render json: { id: @image.id, url: @image.url(:content) }
     else
       puts 'NOT SAVED!'
-      puts "Errors: #{@image.errors}"
+      puts "Errors: #{@image.errors.messages}"
       render json: { error: @image.errors }
     end
   end
